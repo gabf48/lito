@@ -27,7 +27,7 @@ class HandleRezervare:
         self.driver.find_element(By.ID, CAMP_CAUTA_CLIENT).send_keys(nume_client_existent)
         time.sleep(2)
         self.driver.find_element(By.ID, LUPA_CAUTA_CLIENT).click()
-        time.sleep(2)
+        time.sleep(4)
         self.driver.find_element(By.CSS_SELECTOR, BUTTON_ADD_CLIENT).click()
         time.sleep(2)
         self.driver.find_element(By.CSS_SELECTOR, BUTTON_SALVEAZA_PENTRU_OFERTARE).click()

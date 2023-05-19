@@ -82,4 +82,29 @@ def test_adauga_in_cos():
     #verifica sa fie afisate doua camere in cos
     cos_page.verifica_numar_camere_cos('2')
     NR_4 = handle_rezervare.stocheaza_numere_camere_disponibile()
-    assert NR_4 - NR_2 == 1
+    d = NR_4.replace(' ', '')
+    int_num4 = int(d)
+    print('NR_4',int_num4)
+    print('NR_2',int_num2)
+    print('Diff = ',int_num2-int_num4)
+    assert int_num2 - int_num4 == 1
+
+    #sterge o camera din cos
+    cos_page.sterge_camera()
+    time.sleep(3)
+
+    #cosul contine doar o camera
+    cos_page.verifica_numar_camere_cos('1')
+
+    #disponibilitatea camerelor la hotel a crescut cu una
+    NR_5 = handle_rezervare.stocheaza_numere_camere_disponibile()
+    e = NR_5.replace(' ', '')
+    int_num5 = int(e)
+    assert int_num4 + 1 == int_num5
+
+    #sterge si ultima camera din cos
+    cos_page.deschide_cos()
+    cos_page.sterge_camera()
+
+    time.sleep(1000)
+
