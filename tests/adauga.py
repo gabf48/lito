@@ -9,7 +9,7 @@ from pages.cauta_hotel import CautaHotelPage
 
 
 def test_adauga_in_cos():
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(executable_path='C:/Users/filip/PycharmProjects/lito/browsers/chromedriver.exe')
 
     login_page = LoginPage(driver)
     cauta_hotel = CautaHotelPage(driver)
