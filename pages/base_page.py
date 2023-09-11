@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import pyautogui
 
 
 class BasePage:
@@ -14,4 +15,14 @@ class BasePage:
     def is_text_displayed(self, text_to_check):
         page_text = self.driver.page_source
         return text_to_check in page_text
+    def zoom_out(self, zoom_out_count):
+        for _ in range(zoom_out_count):
+            pyautogui.keyDown('ctrl')  # Press the Ctrl key (Windows/Linux)
+            pyautogui.press('-')  # Press the '-' key
+            pyautogui.keyUp('ctrl')
 
+    def zoom_in(self, zoom_out_count):
+        for _ in range(zoom_out_count):
+            pyautogui.keyDown('ctrl')  # Press the Ctrl key (Windows/Linux)
+            pyautogui.press('+')  # Press the '-' key
+            pyautogui.keyUp('ctrl')
