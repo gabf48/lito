@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 from pages.nav_bar import NavBar
 def test_reservation():
     driver = webdriver.Chrome(
-        executable_path='D:/alvanda/browsers/chromedriver.exe')
+        executable_path='C:/projects python/lito/browsers/chromedriver.exe')
 
     login_page = LoginPage(driver)
     basepage = BasePage(driver)

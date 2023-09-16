@@ -7,14 +7,12 @@ from pages.adaugare_turisti import AdaugareTuristi
 from pages.cauta_hotel import CautaHotelPage
 from pages.login_page import LoginPage
 from pages.base_page import BasePage
-from pages.nav_bar import NavBar
 def test_quick_search_reservation_cancel_reservation():
     driver = webdriver.Chrome(
-        executable_path='D:/alvanda/browsers/chromedriver.exe')
+        executable_path='C:/projects python/lito/browsers/chromedriver.exe')
 
     login_page = LoginPage(driver)
     basepage = BasePage(driver)
-    nav_bar = NavBar(driver)
     cauta_hotel = CautaHotelPage(driver)
     adauga_client = AdaugaClient(driver)
     adaugare_turisti = AdaugareTuristi(driver)
